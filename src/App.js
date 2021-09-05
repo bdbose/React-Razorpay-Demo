@@ -29,7 +29,9 @@ function App() {
       return;
     }
 
-    const result = await axios.post('http://localhost:5000/payment/orders');
+    const result = await axios.post(
+      'https://payment-razorpay.herokuapp.com/payment/orders',
+    );
 
     if (!result) {
       alert('Server error. Are you online?');
@@ -55,7 +57,7 @@ function App() {
         };
 
         const result = await axios.post(
-          'http://localhost:5000/payment/success',
+          'https://payment-razorpay.herokuapp.com/payment/success',
           data,
         );
 
